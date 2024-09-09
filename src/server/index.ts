@@ -35,7 +35,11 @@ export function makeServer(
         );
 
         if (date.getHours() === 10) {
-          return new Response(400);
+          return new Response(
+            404,
+            {},
+            { message: "Horário não se encontra mais disponível" }
+          );
         }
 
         return new Response(200);
